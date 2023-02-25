@@ -83,3 +83,10 @@ class Battleship:
             return 'miss'
     
     def check_win(self):
+        # Method for checking if the game has been won
+        for row in self.board:
+            if 'S' in row:
+                return False
+        return True
+    
+    def computer_turn(self):
