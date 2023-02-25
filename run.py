@@ -1,8 +1,6 @@
 import random
 
 
-scores = {"computer": 0, "player": 0}
-
 class Battleship:
     """
     Main game board class, sets number and size of ships, board size
@@ -32,3 +30,7 @@ class Battleship:
         # Methpd for printing the game board
         for row in self.board:
             print(" ".join(row))
+
+    def get_player_name(self):
+        # Method for getting the player's name
+        self.player_name = input("What is your name? ")
