@@ -1,3 +1,6 @@
+"""
+Import random
+"""
 import random
 
 
@@ -43,7 +46,7 @@ class Battleship:
         """
         Method for getting the player's name
         """
-        self.player_name = input("What is your name? ")
+        self.player_name = input("What is your name? \n")
 
     def play_game(self):
         """
@@ -61,7 +64,7 @@ class Battleship:
                     self.player_name, self.num_turns))
                 self.print_board()
                 break
-            elif result == 'hit':
+            if result == 'hit':
                 print("Congratulations, {}! You hit my battleship!".format(
                     self.player_name))
             elif result == 'miss':
@@ -76,9 +79,9 @@ class Battleship:
         while True:
             try:
                 guess_row = int(
-                    input("Guess Row (0-{}): ".format(self.board_size-1)))
+                    input("Guess Row (0-{}): \n".format(self.board_size-1)))
                 guess_col = int(
-                    input("Guess Col (0-{}): ".format(self.board_size-1)))
+                    input("Guess Col (0-{}): \n".format(self.board_size-1)))
                 if not (0 <= guess_row < self.board_size and 0 <= guess_col
                         < self.board_size):
                     raise ValueError
