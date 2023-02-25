@@ -70,5 +70,16 @@ class Battleship:
                 print("Invalid input. Please enter a number between 0 and {}.".format(self.board_size-1))
 
     def check_guess(self, guess_row, guess_col):
+        # Method for checking the user's guess and returning the result
+        if self.board[guess_row][guess_col] == 'S':
+            self.board[guess_row][guess_col] = 'X'
+            if self.check_win():
+                return 'win'
+            return 'hit'
+        elif self.board[guess_row][guess_col] == 'X':
+            return 'repeat'
+        else:
+            self.board[guess_row][guess_col] = 'X'
+            return 'miss'
     
     def check_win(self):
