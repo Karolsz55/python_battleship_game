@@ -9,7 +9,9 @@ class Battleship:
     """
 
     def __init__(self, board_size=5, num_ships=3, ship_size=3):
-        # Method for initializing the game parameters
+        """
+        Method for initializing the game parameters
+        """
         self.board_size = board_size
         self.num_ships = num_ships
         self.ship_size = ship_size
@@ -20,7 +22,9 @@ class Battleship:
         self.player_name = ""
 
     def place_ships(self):
-        # Method for randomly placing the ships on the board
+        """
+        Method for randomly placing the ships on the board
+        """
         while self.ships_placed < self.num_ships:
             ship_row = random.randint(0, self.board_size-1)
             ship_col = random.randint(0, self.board_size-1)
@@ -29,16 +33,22 @@ class Battleship:
                 self.ships_placed += 1
 
     def print_board(self):
-        # Methpd for printing the game board
+        """
+        Methpd for printing the game board
+        """
         for row in self.board:
             print(" ".join(row))
 
     def get_player_name(self):
-        # Method for getting the player's name
+        """
+        Method for getting the player's name
+        """
         self.player_name = input("What is your name? ")
 
     def play_game(self):
-        # Method for playing the game
+        """
+        Method for playing the game
+        """
         print("Welcome to Battleship, {}!".format(self.player_name))
         print("Let's play!")
         self.print_board()
@@ -60,14 +70,17 @@ class Battleship:
             self.computer_turn()
 
     def get_guess(self):
-        # Method for getting the user's guess and validating it
+        """
+        Method for getting the user's guess and validating it
+        """
         while True:
             try:
                 guess_row = int(
                     input("Guess Row (0-{}): ".format(self.board_size-1)))
                 guess_col = int(
                     input("Guess Col (0-{}): ".format(self.board_size-1)))
-                if not (0 <= guess_row < self.board_size and 0 <= guess_col < self.board_size):
+                if not (0 <= guess_row < self.board_size and 0 <= guess_col
+                        < self.board_size):
                     raise ValueError
                 if self.board[guess_row][guess_col] == 'X':
                     print("You already guessed that one. Try again.")
@@ -78,7 +91,9 @@ class Battleship:
                     self.board_size-1))
 
     def check_guess(self, guess_row, guess_col):
-        # Method for checking the user's guess and returning the result
+        """
+        Method for checking the user's guess and returning the result
+        """
         if self.board[guess_row][guess_col] == 'S':
             self.board[guess_row][guess_col] = 'X'
             if self.check_win():
@@ -91,14 +106,18 @@ class Battleship:
             return 'miss'
 
     def check_win(self):
-        # Method for checking if the game has been won
+        """
+        Method for checking if the game has been won
+        """
         for row in self.board:
             if 'S' in row:
                 return False
         return True
 
     def computer_turn(self):
+        """
         # Method for computer turn
+        """
         while True:
             comp_guess_row = random.randint(0, self.board_size-1)
             comp_guess_col = random.randint(0, self.board_size-1)
