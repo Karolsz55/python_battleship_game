@@ -34,3 +34,26 @@ class Battleship:
     def get_player_name(self):
         # Method for getting the player's name
         self.player_name = input("What is your name? ")
+
+    def play_game(self):
+        # Method for playing the game
+        print("Welcome to Battleship, {}!".format(self.player_name))
+        print("Let's play!")
+        self.print_board()
+        while True:
+            guess_row, guess_col = self.get_guess()
+            result = self.check_guess(guess_row, guess_col)
+            self.num_turns += 1
+            if result == 'win':
+                print("Congratulations, {}! You won in {} turns!".format(self.player_name, self.num_turns))
+                self.print_board()
+                break
+            elif result == 'hit':
+                print("Congratulations, {}! You hit my battleship!".format(self.player_name))
+            elif result == 'miss':
+                print("Sorry, {}! You missed my battleship!".format(self.player_name))
+            self.computer_turn()
+    
+    def get_guess(self):
+
+    def check_guess(self, guess_row, guess_col):
