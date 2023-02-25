@@ -55,5 +55,20 @@ class Battleship:
             self.computer_turn()
     
     def get_guess(self):
+        # Method for getting the user's guess and validating it
+        while True:
+            try:
+                guess_row = int(input("Guess Row (0-{}): ".format(self.board_size-1)))
+                guess_col = int(input("Guess Col (0-{}): ".format(self.board_size-1)))
+                if not (0 <= guess_row < self.board_size and 0 <= guess_col < self.board_size):
+                    raise ValueError
+                if self.board[guess_row][guess_col] == 'X':
+                    print("You already guessed that one. Try again.")
+                    continue
+                return guess_row, guess_col
+            except ValueError:
+                print("Invalid input. Please enter a number between 0 and {}.".format(self.board_size-1))
 
     def check_guess(self, guess_row, guess_col):
+    
+    def check_win(self):
