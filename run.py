@@ -90,3 +90,22 @@ class Battleship:
         return True
     
     def computer_turn(self):
+        # Let the computer take a turn
+        while True:
+            comp_guess_row = random.randint(0, self.board_size-1)
+            comp_guess_col = random.randint(0, self.board_size-1)
+            if self.board[comp_guess_row][comp_guess_col] == 'X':
+                continue
+            elif self.board[comp_guess_row][comp_guess_col] == 'S':
+                print("The computer sank one of your battleships!")
+                self.board[comp_guess_row][comp_guess_col] = 'X'
+                if self.check_win():
+                    print("Sorry, the computer won!")
+                    self.print_board()
+                    exit()
+                break
+            else:
+                print("The computer missed!")
+                self.board[comp_guess_row][comp_guess_col] = 'X'
+                break
+        self.print_board()
