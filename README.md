@@ -1,31 +1,41 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Game of Battleship!
 
-Welcome Karolsz55,
+My variation is an in terminal version of the game written using Python.
+It provides a quick dose of entertainment, is lightweight, fun and easy to understand. Player gets to take a chance against computer in a match untill all one side ships are destroyed.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## Features
+*** 
+- Navigation
+    * The game has a very simple and straightforward layout.
+    * Its played in a mock up terminal.
+    * Game requires player to select a name, and then proceeds to build a playing board of player's and computer's ships.
 
-## Reminders
+## Testing
+*** 
+- Game testing
+    * No tests carried out as python script doesnt load in terminal.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+## Bug fixing
+*** 
+- Major bug still present
+    * There is a major bug present somewhere, Python code as reviewed by CI support seem to be ok, 
+    however when running the script the terminal only outputs a blank new line. 
+    * Heroku deployed version doesnt work either.
+    * Submitted for grading anyway, as ran out of time for submission.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Validating the code
+*** 
+- PEP8 Python checker
+    * Code passes PEP8 Python checker with no errors returned.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Deployment
+*** 
+- Deployment to Heroku
+    * Code was pushed to GitHub
+    * Heroku account linked to GitHub
+    * New app created on Heroku and correct branch selected from GitHub.
+    * App built by Heroku and deployed link presented.
 
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!

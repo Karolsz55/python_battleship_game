@@ -119,7 +119,7 @@ class Battleship:
 
     def computer_turn(self):
         """
-        # Method for computer turn
+        Method for computer turn
         """
         while True:
             comp_guess_row = random.randint(0, self.board_size-1)
